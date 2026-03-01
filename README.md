@@ -31,7 +31,7 @@ mkdir -p tls/ \
 
 **With TLS**
 ```bash
-./server \
+./bin/tunnel-server \
   --tunnel 0.0.0.0:10100 \
   --listen 127.0.0.1:7000 \
   --tls \
@@ -41,7 +41,7 @@ mkdir -p tls/ \
 
 **Without TLS**
 ```bash
-./server \
+./bin/tunnel-server \
   --listen 0.0.0.0:10100 \
   --local 127.0.0.1:7000
 ```
@@ -56,7 +56,7 @@ mkdir -p tls/ \
 
 **With TLS**
 ```bash
-./host \
+./bin/tunnel-host \
   --server 31.31.207.164:10100 \
   --forward 127.0.0.1:3000 \
   --tls \
@@ -65,7 +65,7 @@ mkdir -p tls/ \
 
 **Without TLS**
 ```bash
-./host \
+./bin/tunnel-host \
   --server 31.31.207.164:10100 \
   --forward 127.0.0.1:3000
 ```

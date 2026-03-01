@@ -1,8 +1,11 @@
-.PHONY: build clean run-server run-host
+.PHONY: build build-docker clean run-server run-host
 
 build:
-	go build -o bin/server cmd/server/server.go
-	go build -o bin/host cmd/host/host.go
+	CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o /out/tunnel-server ./cmd/server
+	CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o /out/tunnel-host   ./cmd/host
+
+build-docker:
+	docker build --output bin/ .
 
 clean:
 	rm -rf output/
