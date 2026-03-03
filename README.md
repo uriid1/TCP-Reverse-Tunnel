@@ -42,8 +42,8 @@ mkdir -p tls/ \
 **Without TLS**
 ```bash
 ./bin/tunnel-server \
-  --listen 0.0.0.0:10100 \
-  --local 127.0.0.1:7000
+  --tunnel 0.0.0.0:10100 \
+  --listen 127.0.0.1:7000
 ```
 
 ### Client
